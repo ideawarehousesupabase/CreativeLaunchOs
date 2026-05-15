@@ -78,12 +78,6 @@ function About() {
                 <div className="flex gap-2"><span className="text-primary font-bold">→</span> Helping solo creators scale into thriving studios</div>
                 <div className="flex gap-2"><span className="text-primary font-bold">→</span> Building in public, shaped by real creators</div>
               </div>
-              <Link
-                to="/waitlist"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary via-violet to-neon px-6 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-105 transition-all self-start"
-              >
-                Join the waitlist <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
           </div>
         </div>
