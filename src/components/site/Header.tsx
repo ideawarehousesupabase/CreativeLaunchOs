@@ -24,16 +24,16 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "glass border-b border-border/50" : "bg-transparent"
+        scrolled ? "glass border-b border-border/50 shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-neon to-cyan glow-violet">
-            <Sparkles className="absolute inset-0 m-auto h-4 w-4 text-background" />
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-primary via-neon to-cyan shadow-md">
+            <Sparkles className="absolute inset-0 m-auto h-4 w-4 text-white" />
           </div>
-          <span className="font-display text-lg font-bold tracking-tight">
-            Creative Launch <span className="text-gradient">OS</span>
+          <span className="font-display text-lg font-bold tracking-tight text-foreground">
+            Creative Launch
           </span>
         </Link>
 
@@ -42,8 +42,8 @@ export function Header() {
             <Link
               key={n.to}
               to={n.to}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-surface/50"
-              activeProps={{ className: "px-4 py-2 text-sm text-foreground rounded-lg bg-surface/60" }}
+              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-surface"
+              activeProps={{ className: "px-4 py-2 text-sm text-foreground rounded-lg bg-surface font-medium" }}
             >
               {n.label}
             </Link>
@@ -53,7 +53,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             to="/waitlist"
-            className="relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary via-violet to-neon px-5 py-2.5 text-sm font-semibold text-primary-foreground glow-violet transition-transform hover:scale-105"
+            className="relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary via-violet to-neon px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg hover:scale-105"
           >
             Join Waitlist
           </Link>
@@ -75,7 +75,7 @@ export function Header() {
               key={n.to}
               to={n.to}
               onClick={() => setOpen(false)}
-              className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-surface/50 rounded-lg"
+              className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-surface rounded-lg"
             >
               {n.label}
             </Link>
@@ -83,7 +83,7 @@ export function Header() {
           <Link
             to="/waitlist"
             onClick={() => setOpen(false)}
-            className="block text-center rounded-full bg-gradient-to-r from-primary via-violet to-neon px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
+            className="block text-center rounded-full bg-gradient-to-r from-primary via-violet to-neon px-5 py-3 text-sm font-semibold text-white mt-2"
           >
             Join Waitlist
           </Link>

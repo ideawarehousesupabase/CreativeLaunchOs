@@ -6,8 +6,8 @@ import { CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/waitlist")({
   head: () => ({
     meta: [
-      { title: "Join the Waitlist — Creative Launch OS" },
-      { name: "description", content: "Get early access to Creative Launch OS. Help shape the future of the creator operating system." },
+      { title: "Join the Waitlist — Creative Launch" },
+      { name: "description", content: "Get early access to Creative Launch. Help shape the future of the creative business platform." },
     ],
   }),
   component: Waitlist,
@@ -25,13 +25,13 @@ function Waitlist() {
       />
 
       <section className="mx-auto max-w-2xl px-6 pb-24">
-        <div className="rounded-3xl glass shadow-elevated p-8 md:p-10">
+        <div className="rounded-3xl bg-white border border-border shadow-xl p-8 md:p-10">
           {done ? (
             <div className="text-center py-10">
-              <div className="inline-grid place-items-center h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-neon glow-violet mb-6">
-                <CheckCircle2 className="h-7 w-7" />
+              <div className="inline-grid place-items-center h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-neon shadow-lg mb-6">
+                <CheckCircle2 className="h-7 w-7 text-white" />
               </div>
-              <h2 className="font-display text-3xl font-bold">You're on the list ✨</h2>
+              <h2 className="font-display text-3xl font-bold text-foreground">You're on the list ✨</h2>
               <p className="mt-3 text-muted-foreground">We'll be in touch with early access details soon.</p>
             </div>
           ) : (
@@ -64,7 +64,7 @@ function Waitlist() {
               </Field>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary via-violet to-neon px-6 py-3.5 text-sm font-semibold glow-violet hover:scale-[1.01] transition-transform"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary via-violet to-neon px-6 py-3.5 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all"
               >
                 <Sparkles className="h-4 w-4" /> Request early access
                 <ArrowRight className="h-4 w-4" />
@@ -78,7 +78,7 @@ function Waitlist() {
   );
 }
 
-const inputCls = "w-full rounded-xl bg-background/60 border border-border/60 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition";
+const inputCls = "w-full rounded-xl bg-surface border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (

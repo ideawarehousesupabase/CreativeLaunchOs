@@ -5,8 +5,8 @@ import { Bot, LayoutDashboard, Brain, Calendar, Users, BarChart3, ArrowRight } f
 export const Route = createFileRoute("/platform")({
   head: () => ({
     meta: [
-      { title: "Platform — Creative Launch OS" },
-      { name: "description", content: "Explore the full Creative Launch OS ecosystem: AI front desk, dashboard, portfolio intelligence, booking, projects and analytics." },
+      { title: "Platform — Creative Launch" },
+      { name: "description", content: "Explore the full Creative Launch ecosystem: AI front desk, dashboard, portfolio intelligence, booking, projects and analytics." },
     ],
   }),
   component: Platform,
@@ -33,13 +33,13 @@ function Platform() {
       <section className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {modules.map((m) => (
-            <Link key={m.title} to={m.to} className="group rounded-2xl glass p-7 hover:border-primary/50 transition hover:-translate-y-1">
-              <div className="inline-grid place-items-center h-11 w-11 rounded-xl bg-gradient-to-br from-primary/30 to-neon/20 border border-border/50">
-                <m.icon className="h-5 w-5 text-cyan" />
+            <Link key={m.title} to={m.to} className="group rounded-2xl bg-white border border-border p-7 hover:border-primary/40 hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="inline-grid place-items-center h-11 w-11 rounded-xl bg-gradient-to-br from-primary/10 to-neon/10 border border-primary/15">
+                <m.icon className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold">{m.title}</h3>
+              <h3 className="mt-5 font-display text-xl font-semibold text-foreground">{m.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{m.desc}</p>
-              <div className="mt-5 inline-flex items-center gap-1 text-sm text-primary group-hover:gap-2 transition-all">
+              <div className="mt-5 inline-flex items-center gap-1 text-sm text-primary font-medium group-hover:gap-2 transition-all">
                 Open demo <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </Link>

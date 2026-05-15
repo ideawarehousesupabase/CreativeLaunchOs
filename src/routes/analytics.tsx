@@ -5,7 +5,7 @@ import { TrendingUp, Repeat, Users, Target } from "lucide-react";
 export const Route = createFileRoute("/analytics")({
   head: () => ({
     meta: [
-      { title: "Growth Analytics — Creative Launch OS" },
+      { title: "Growth Analytics — Creative Launch" },
       { name: "description", content: "Revenue, retention and conversion analytics built for creative businesses." },
     ],
   }),
@@ -30,30 +30,30 @@ function Analytics() {
         subtitle="No vanity metrics. Just the insights that help your studio compound."
       />
       <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="rounded-3xl glass shadow-elevated p-8 space-y-6">
+        <div className="rounded-3xl bg-white border border-border shadow-xl p-8 space-y-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {kpis.map((k) => (
-              <div key={k.label} className="rounded-2xl bg-surface/60 border border-border/50 p-5">
-                <k.icon className="h-4 w-4 text-cyan" />
+              <div key={k.label} className="rounded-2xl bg-surface border border-border p-5">
+                <k.icon className="h-4 w-4 text-primary" />
                 <div className="mt-3 text-xs text-muted-foreground">{k.label}</div>
                 <div className="mt-1 font-display text-3xl font-bold text-gradient">{k.value}</div>
               </div>
             ))}
           </div>
-          <div className="rounded-2xl bg-surface/60 border border-border/50 p-6">
-            <div className="text-sm font-medium mb-4">Bookings · last 12 months</div>
+          <div className="rounded-2xl bg-surface border border-border p-6">
+            <div className="text-sm font-medium mb-4 text-foreground">Bookings · last 12 months</div>
             <div className="flex items-end gap-2 h-48">
               {bars.map((h, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <div className="w-full rounded-t-md bg-gradient-to-t from-primary/40 to-cyan/80" style={{ height: `${h}%` }} />
+                  <div className="w-full rounded-t-md bg-gradient-to-t from-primary/30 to-primary/70" style={{ height: `${h}%` }} />
                   <span className="text-[10px] text-muted-foreground font-mono">{["J","F","M","A","M","J","J","A","S","O","N","D"][i]}</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-surface/60 border border-border/50 p-6">
-              <div className="text-sm font-medium mb-3">Top revenue streams</div>
+            <div className="rounded-2xl bg-surface border border-border p-6">
+              <div className="text-sm font-medium mb-3 text-foreground">Top revenue streams</div>
               {[
                 { l: "Editorial sessions", v: 42 },
                 { l: "Brand campaigns", v: 28 },
@@ -61,15 +61,15 @@ function Analytics() {
                 { l: "Workshops", v: 12 },
               ].map((s) => (
                 <div key={s.l} className="mb-3 last:mb-0">
-                  <div className="flex justify-between text-xs"><span>{s.l}</span><span className="text-muted-foreground">{s.v}%</span></div>
-                  <div className="mt-1.5 h-1.5 rounded-full bg-background overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-primary to-cyan" style={{ width: `${s.v}%` }} />
+                  <div className="flex justify-between text-xs"><span className="text-foreground">{s.l}</span><span className="text-muted-foreground">{s.v}%</span></div>
+                  <div className="mt-1.5 h-1.5 rounded-full bg-border overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-primary to-neon" style={{ width: `${s.v}%` }} />
                   </div>
                 </div>
               ))}
             </div>
-            <div className="rounded-2xl bg-surface/60 border border-border/50 p-6">
-              <div className="text-sm font-medium mb-3">Client satisfaction</div>
+            <div className="rounded-2xl bg-surface border border-border p-6">
+              <div className="text-sm font-medium mb-3 text-foreground">Client satisfaction</div>
               <div className="font-display text-6xl font-bold text-gradient">4.92<span className="text-2xl text-muted-foreground">/5</span></div>
               <p className="mt-2 text-sm text-muted-foreground">Across 184 reviews this quarter — driven by faster reply times and clearer briefs.</p>
             </div>
