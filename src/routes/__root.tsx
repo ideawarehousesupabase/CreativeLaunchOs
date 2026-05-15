@@ -79,11 +79,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "AI-powered operating system that handles bookings, leads, projects and analytics for creators." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@CreativeLaunchOS" },
       { name: "twitter:title", content: "Creative Launch OS — The AI Operating System for Creators" },
       { name: "twitter:description", content: "AI-powered operating system that handles bookings, leads, projects and analytics for creators." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0b18f67f-13e8-405c-b4c0-feb4f0d5f1ad/id-preview-0f159621--6a8525ff-db9c-45a4-95e3-dcd86e1592c3.lovable.app-1778762007109.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0b18f67f-13e8-405c-b4c0-feb4f0d5f1ad/id-preview-0f159621--6a8525ff-db9c-45a4-95e3-dcd86e1592c3.lovable.app-1778762007109.png" },
     ],
     links: [
       {

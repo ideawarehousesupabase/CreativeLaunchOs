@@ -1,8 +1,9 @@
-import { defineConfig, loadEnv, mergeConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { nitro } from "nitro/vite";
 
 // ---------------------------------------------------------------------------
 // Dev-only SSR error logger plugin (surfaces SSR errors to the browser via HMR)
@@ -144,7 +145,7 @@ function devServerFnErrorLogger() {
 // ---------------------------------------------------------------------------
 // Main config
 // ---------------------------------------------------------------------------
-export default defineConfig(async ({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   // Inject VITE_* env vars as define constants
   const loadedEnv = loadEnv(mode, process.cwd(), "VITE_");
   const envDefine: Record<string, string> = {};
@@ -152,35 +153,7 @@ export default defineConfig(async ({ command, mode }) => {
     envDefine[`import.meta.env.${key}`] = JSON.stringify(value);
   }
 
-  const plugins: any[] = [
-    tailwindcss(),
-    tsConfigPaths({ projects: ["./tsconfig.json"] }),
-    devServerFnErrorLogger(),
-    devSsrErrorLogger(),
-    tanstackStart({
-      server: { entry: "server" },
-      importProtection: {
-        behavior: "error",
-        client: {
-          files: ["**/server/**"],
-          specifiers: ["server-only"],
-        },
-      },
-    }),
-    react(),
-  ];
-
-  // Add Cloudflare plugin for production builds
-  if (command === "build") {
-    try {
-      const { cloudflare } = await import("@cloudflare/vite-plugin");
-      plugins.push(cloudflare({ viteEnvironment: { name: "ssr" } }));
-    } catch {
-      // @cloudflare/vite-plugin is optional
-    }
-  }
-
-  const config = {
+  return {
     define: envDefine,
     resolve: {
       alias: {
@@ -205,8 +178,22 @@ export default defineConfig(async ({ command, mode }) => {
         },
       },
     },
-    plugins,
+    plugins: [
+      tailwindcss(),
+      tsConfigPaths({ projects: ["./tsconfig.json"] }),
+      devServerFnErrorLogger(),
+      devSsrErrorLogger(),
+      tanstackStart({
+        importProtection: {
+          behavior: "error",
+          client: {
+            files: ["**/server/**"],
+            specifiers: ["server-only"],
+          },
+        },
+      }),
+      nitro(),
+      react(),
+    ],
   };
-
-  return config;
 });
