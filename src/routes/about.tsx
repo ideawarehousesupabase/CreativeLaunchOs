@@ -20,7 +20,7 @@ const values = [
 ];
 
 const roadmap = [
-  { q: "Q1", title: "Private alpha", desc: "AI front desk, dashboard and waitlist live with first 50 creators." },
+  { q: "Q1", title: "Private alpha", desc: "AI front desk, dashboard and waitlist live for early creators." },
   { q: "Q2", title: "Portfolio intelligence", desc: "Style graphing and ideal-client matching launch." },
   { q: "Q3", title: "Team workspace", desc: "Micro-studio collaboration, shared kanban and reviews." },
   { q: "Q4", title: "Public launch", desc: "Pricing tiers open. Industry-specific templates ship." },
