@@ -247,9 +247,9 @@ function Landing() {
       <section className="relative mx-auto max-w-7xl px-6 py-24">
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { name: "Lina K.", role: "Tattoo artist · Berlin", quote: "It feels like having a manager, agent and assistant — all running quietly in the background." },
-            { name: "Marco D.", role: "Photographer · Milan", quote: "I booked 14 sessions in my first month using the AI front desk. I haven't replied to a DM since." },
-            { name: "Studio Rua", role: "Micro-agency · Lisbon", quote: "Finally a tool that doesn't feel like Salesforce. It actually understands creative work." },
+            { name: "Lina K.", role: "Tattoo artist · London", quote: "It feels like having a manager, agent and assistant — all running quietly in the background." },
+            { name: "Marco D.", role: "Photographer · Manchester", quote: "I booked 14 sessions in my first month using the AI front desk. I haven't replied to a DM since." },
+            { name: "Studio Rua", role: "Micro-agency · Edinburgh", quote: "Finally a tool that doesn't feel like Salesforce. It actually understands creative work." },
           ].map((t) => (
             <div key={t.name} className="rounded-2xl bg-white border border-border p-7 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex gap-1 text-amber-400">
