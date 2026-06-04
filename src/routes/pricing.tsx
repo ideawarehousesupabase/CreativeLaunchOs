@@ -13,9 +13,9 @@ export const Route = createFileRoute("/pricing")({
 });
 
 const plans = [
-  { name: "Starter", price: "€0", tag: "For exploring", features: ["AI front desk (limited)", "Basic dashboard", "1 calendar", "Up to 20 leads / mo"], cta: "Join waitlist", featured: false },
-  { name: "Pro", price: "€29", tag: "For serious solo creators", features: ["Unlimited AI conversations", "Portfolio intelligence", "Smart booking + deposits", "Unlimited projects", "Growth analytics"], cta: "Get early access", featured: true },
-  { name: "Studio", price: "€79", tag: "For micro-studios & teams", features: ["Everything in Pro", "Team workspace", "Shared kanban + reviews", "Custom branding", "Priority support"], cta: "Talk to us", featured: false },
+  { name: "Starter", price: "£0", tag: "For exploring", features: ["AI front desk (limited)", "Basic dashboard", "1 calendar", "Up to 20 leads / mo"], cta: "Join waitlist", featured: false },
+  { name: "Pro", price: "£29", tag: "For serious solo creators", features: ["Unlimited AI conversations", "Portfolio intelligence", "Smart booking + deposits", "Unlimited projects", "Growth analytics"], cta: "Get early access", featured: true },
+  { name: "Studio", price: "£149", tag: "For micro-studios & teams", features: ["Everything in Pro", "Team workspace", "Shared kanban + reviews", "Custom branding", "Priority support"], cta: "Talk to us", featured: false },
 ];
 
 function Pricing() {
